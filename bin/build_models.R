@@ -94,13 +94,5 @@ cisTopicObject <- runWarpLDAModels(cisTopicObject,
                                    iterations = args$num_iterations,
                                    addModels = FALSE)
 
-#cisTopicObject <- runWarpLDAModels(cisTopicObject, 
-#                                   topic = args$topic,
-#                                   seed = args$seed,
-#                                   nCores = args$num_workers,
-#                                   iterations = args$iterations,
-#                                   addModels = FALSE)
-
-                                   # topic=c(2, 5, 10:25, 30, 35, 40), 
 saveRDS(cisTopicObject,file=args$output)
 

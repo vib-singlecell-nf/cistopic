@@ -12,7 +12,7 @@ process SC__CISTOPIC__BUILD_MODELS {
         tuple val(sampleId), path(f)
 
     output:
-        tuple val(sampleId), path("${sampleId}.SC__CISTOPIC__CREATE_OBJECT.cistopic_rds")
+        tuple val(sampleId), path("${sampleId}.SC__CISTOPIC__BUILD_MODELS.cistopic_rds")
 
     script:
         def sampleParams = params.parseConfig(sampleId, params.global, params.sc.cistopic.build_models)
@@ -26,7 +26,7 @@ process SC__CISTOPIC__BUILD_MODELS {
             --alpha ${processParams.alpha} \
             --beta ${processParams.beta} \
             --num_iterations ${processParams.num_iterations} \
-            --output ${sampleId}.SC__CISTOPIC__CREATE_OBJECT.cistopic_rds
+            --output ${sampleId}.SC__CISTOPIC__BUILD_MODELS.cistopic_rds
         """
 }
 
