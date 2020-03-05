@@ -5,6 +5,7 @@ nextflow.preview.dsl=2
 
 include SC__FILE_CONVERTER from '../utils/processes/utils.nf' params(params)
 
+include SC__CISTOPIC__BUILD_MODELS from './processes/build_models.nf' params(params)
 
 //////////////////////////////////////////////////////
 // Define the workflow
@@ -16,8 +17,9 @@ workflow cistopic {
 
     main:
         data = SC__FILE_CONVERTER( data )
-        //samples = data.map { it -> it[0] }
         data.view()
+
+       SC__CISTOPIC__BUILD_MODELS(data)
 
 }
 
