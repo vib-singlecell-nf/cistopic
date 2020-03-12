@@ -21,7 +21,7 @@ process SC__CISTOPIC__BUILD_MODELS {
         ${binDir}build_models.R \
             --input ${f} \
             --topic ${processParams.topics_to_test} \
-			${'--seed ' + (params.global.containsKey('seed') ? params.global.seed: params.seed)} \
+            --seed ${params.global.seed} \
             --num_workers ${processParams.num_workers} \
             --alpha ${processParams.alpha} \
             --beta ${processParams.beta} \
